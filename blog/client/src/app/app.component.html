@@ -1,0 +1,27 @@
+<div class="top-bar">
+  <div class="log">
+    <img (click)="home()" src="" alt='玥玥屋'>
+  </div>
+  <div class="main-nav">
+    <ul>
+      <li (click)="home()">Home</li>
+      <li (click)="tag()">Tags</li>
+      <li (click)="about()">About</li>
+    </ul>
+  </div>
+  <div class="main-nav-mobile">
+    <div class="mobile-nav ion-navicon" (click)="toggleDropdownMenu($event)"></div>
+    <ul [@dropdownMenuState]="dropdownMenu.state">
+      <li (click)="home()">Home</li>
+      <li (click)="tag()">Tags</li>
+      <li (click)="about()">About</li>
+    </ul>
+  </div>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  © 2017 WEIWEI BLOG
+</div>
+

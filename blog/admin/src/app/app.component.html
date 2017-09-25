@@ -1,0 +1,42 @@
+<div class="left-menu">
+  <ul>
+    <li class="logo">
+      <a [routerLink]="['/admin/add']" [routerLinkActive]="['.router-active']">
+        <i class="ion-social-angular icon"></i>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/add']" routerLinkActive="router-active">
+        <div class="ion-edit icon"></div>新增
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/tag']" routerLinkActive="router-active">
+        <div class="ion-bookmark icon"></div>标签
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/classification']" routerLinkActive="router-active">
+        <div class="ion-document-text icon"></div>归档
+      </a>
+    </li>
+    <li class="personal-center">
+      <a class="ion-navicon" (click)="personalCenter($event)"></a>
+    </li>
+    <li class="personal-center-content" (click)="personalCenterContent($event)" *ngIf="isShowAccount">
+      <div class="title">
+        <i class="ion-happy-outline"></i>
+        <div>
+          {{userName}}
+        </div>
+      </div>
+      <div class="logout" (click)="logout()">
+        <span class="ion-android-exit"></span>
+        退出登录
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="content-wrap">
+  <router-outlet></router-outlet>
+</div>
